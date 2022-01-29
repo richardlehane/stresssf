@@ -36,7 +36,8 @@ func main() {
 		log.Fatal(err)
 	}
 	// Do multiple runs up to the size of the corpus
-	for i := 8; i <= corpusSz; i = i * 2 {
+	i := 8
+	for {
 		start := time.Now()
 		for j := 0; j < i; j++ {
 			wg.Add(1)
@@ -45,6 +46,13 @@ func main() {
 		wg.Wait()
 		elapsed := time.Since(start)
 		log.Printf("Run with corpus size %d took %s", i, elapsed)
+		if i == corpusSz {
+			break
+		}
+		i = i * 2
+		if i > corpusSz {
+			i = corpusSz
+		}
 	}
 	close(urls)
 }
