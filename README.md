@@ -10,3 +10,5 @@ I've found I can reliably crash the server on corpus sizes even as low as 248.
 
 This program will do multiple runs (starting from 8 and doubling each time) up until the corpus size you've provided. This is in order to measure the time taken so that I can assess the speed impacts of any fixes I apply to siegfried.
 
+To install this program, do `go install github.com/richardlehane/stresssf@latest`.
+
