@@ -38,7 +38,7 @@ func main() {
 	// Do multiple runs up to the size of the corpus
 	for i := 8; i <= corpusSz; i = i * 2 {
 		start := time.Now()
-		for j := 0; j < corpusSz; j++ {
+		for j := 0; j < i; j++ {
 			wg.Add(1)
 			urls <- makeUrl(os.Args[1], filepath.Join("corpus", fmt.Sprintf("%d.pdf", j)))
 		}
