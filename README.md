@@ -6,7 +6,8 @@ To run this program you need to give the server address for your siegfried serve
 
 E.g. `stresssf localhost:8080 1024`
 
-I've found I can reliably crash the server on corpus sizes even as low as 248.
+With a `-multi` setting of 32, I've found I can reliably crash the server on corpus sizes even as low as 248.
+The server does seem to hold up if you set `-multi 1`.
 
 This program will do multiple runs (starting from 8 and doubling each time) up until the corpus size you've provided. This is in order to measure the time taken so that I can assess the speed impacts of any fixes I apply to siegfried.
 
